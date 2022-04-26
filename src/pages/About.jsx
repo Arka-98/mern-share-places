@@ -18,6 +18,7 @@ function About() {
         <li>Used animations and transition effects with the help of animate.css to enhance user experience</li>
         <li>Used JSON Web Tokens (JWT) to authorize users on the application</li>
         <li>Followed MVC architecture in Express to organize and manage the backend</li>
+        <li>Used Multer to upload files on the backend</li>
         <li>Used MongoDB Atlas, which is a cloud database service, to store applcation data</li>
         <li>Built the application schema using Mongoose which is an ODM (Object Data Modeller) for MongoDB</li>
       </ul>
