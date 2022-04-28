@@ -21,7 +21,7 @@ function EditPlace() {
   const [formData, dispatch] = useForm({ input: { title: "", description: "", image: null, address: "" }, errors: { title: false, description: false, image: false, address: false }, isError: true })
   
   useEffect(() => {
-    fetchData(`${process.env.REACT_APP_API_BASE_URL}/api/places/${params.placeId}`)
+    fetchData(`${process.env.REACT_APP_API_BASE_URL}/places/${params.placeId}`)
     .then((data) => {
       const { title, description, address, image } = data
       dispatch({ type: FORM_ACTIONS.SET_CUSTOM_INPUT, payload: { title, description, address, image } })

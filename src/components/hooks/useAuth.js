@@ -1,26 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-let logoutTimer
-
 function useAuth() {
     const [token, setToken] = useState(null)
     const [user, setUser] = useState(null)
     const [expiration, setExpiration] = useState()
-
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('userData'))
-        if(data && data.token && (new Date(data.expiration) > new Date())) {
-            logIn(data.user, data.token, new Date(data.expiration))
-        }
-    }, [])
-
-    useEffect(() => {
-        if(token && expiration) {
-            logoutTimer = setTimeout(logOut, expiration - new Date())
-        } else {
-            clearTimeout(logoutTimer)
-        }
-    }, [token, expiration])
 
     const logIn = (user, token, expiration) => {
         setUser(user)
@@ -41,7 +24,7 @@ function useAuth() {
         localStorage.setItem('userData', JSON.stringify({ user, token }))
     }
 
-    return { token, user, logIn, logOut, updateUser }
+    return { token, user, expiration, logIn, logOut, updateUser }
 }
 
 export default useAuth

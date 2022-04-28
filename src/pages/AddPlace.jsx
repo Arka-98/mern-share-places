@@ -47,7 +47,7 @@ function AddPlace() {
     data.append('image', image)
     data.append('address', address)
     try {
-      await fetchData(`${process.env.REACT_APP_API_BASE_URL}/api/places/`, 'POST', { Authorization: `Bearer ${token}` }, data)
+      await fetchData(`${process.env.REACT_APP_API_BASE_URL}/places/`, 'POST', { Authorization: `Bearer ${token}` }, data)
       navigate(`/${user._id}/places`)
       toast.success('Place created successfully', { autoClose: 3000 })
     } catch (error) {

@@ -18,7 +18,7 @@ function PlaceItem({ place, handleDelete }) {
   const [likes, setLikes] = useState(() => ({ selected: isLoggedIn && place.likedUserIds.includes(user._id), count: place.likedUserIds.length }))
     const handleChange = async () => {
         try {
-          await fetchData(`http://localhost:5000/api/places/${place._id}/like`, 'PUT', { Authorization: `Bearer ${token}` })
+          await fetchData(`${process.env.REACT_APP_API_BASE_URL}/places/${place._id}/like`, 'PUT', { Authorization: `Bearer ${token}` })
           setLikes(prevData => ({ selected: !prevData.selected, count: prevData.selected ? prevData.count - 1 : prevData.count + 1 }))
         } catch (error) {
           toast.error(error.message, { autoClose: 3000 })
