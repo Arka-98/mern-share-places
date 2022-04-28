@@ -19,7 +19,7 @@ function About() {
         <li>Used JSON Web Tokens (JWT) to authorize users on the application</li>
         <li>Used AWS S3 to store user images with the help of Multer</li>
         <li>Followed MVC architecture in Express to organize and manage the backend</li>
-        <li>Fully fleshed out Forgot Password functionality using Nodemailer to validate OTP</li>
+        <li>Fully fleshed out Forgot Password functionality using Nodemailer & JWT to validate OTP</li>
         <li>Used MongoDB Atlas, which is a cloud database service, to store applcation data</li>
         <li>Built the application schema using Mongoose which is an ODM (Object Data Modeller) for MongoDB</li>
       </ul>
