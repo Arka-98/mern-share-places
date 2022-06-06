@@ -35,6 +35,9 @@ function Register() {
     const { name, value } = e.target
     dispatch({ type: FORM_ACTIONS.TRIM_INPUT, payload: {name, value} })
     dispatch({ type: FORM_ACTIONS.VALIDATE_INPUT, payload: {name, value} })
+    if (name === 'password' || name === 'confPassword') {
+      dispatch({ type: FORM_ACTIONS.CHECK_PASSWORDS, payload: {name, value} })
+    }
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
